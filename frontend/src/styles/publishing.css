@@ -1,0 +1,11 @@
+.rf-error-list { margin: 0; padding-left: 18px; display: grid; gap: 4px; }
+.rf-check-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.rf-check-list li { display: flex; align-items: center; gap: 8px; color: var(--rf-muted); font-size: 0.92rem; }
+.rf-check-list .rf-done { color: var(--rf-success); }
+.rf-post-list { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--rf-space-3); }
+.rf-post { display: flex; align-items: flex-start; justify-content: space-between; gap: var(--rf-space-3); }
+.rf-post-body { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.rf-post-body small { color: var(--rf-muted); overflow-wrap: anywhere; }
+.rf-post-caption { margin: 0; overflow-wrap: anywhere; white-space: pre-wrap; }
+.rf-status-demo-scheduled, .rf-status-demo-published { color: #fbbf24; border-color: rgba(251, 191, 36, .4); }
+.rf-status-draft { color: var(--rf-muted); }

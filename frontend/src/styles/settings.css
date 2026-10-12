@@ -1,0 +1,13 @@
+.rf-check { display: flex; align-items: flex-start; gap: 10px; color: var(--rf-text); font-size: 0.92rem; cursor: pointer; }
+.rf-check input { width: 18px; height: 18px; margin-top: 2px; accent-color: var(--rf-violet); }
+.rf-check input:focus-visible { outline: none; box-shadow: var(--rf-focus); }
+.rf-check span { display: flex; flex-direction: column; gap: 2px; }
+.rf-check small, .rf-hint { color: var(--rf-muted); font-size: 0.8rem; }
+.rf-hint { margin: 0; }
+.rf-recent { list-style: none; margin: 0 0 var(--rf-space-2); padding: 0; display: grid; gap: var(--rf-space-2); }
+.rf-recent li { display: flex; flex-direction: column; gap: 2px; padding: 8px 0; border-bottom: 1px solid var(--rf-border); }
+.rf-recent span { color: var(--rf-muted); font-size: 0.82rem; }
+.rf-more { color: var(--rf-violet); font-size: 0.88rem; }
+html[data-motion='reduce'] *, html[data-motion='reduce'] *::before, html[data-motion='reduce'] *::after {
+  animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important;
+}

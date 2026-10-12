@@ -1,0 +1,23 @@
+:root {
+  --rf-bg: #070a14;
+  --rf-surface: #0e1424;
+  --rf-border: rgba(255, 255, 255, 0.08);
+  --rf-text: #f3f5fb;
+  --rf-muted: #9aa3b8;
+  --rf-violet: #8b5cf6;
+  --rf-blue: #3b82f6;
+  --rf-danger: #f87171;
+  --rf-success: #34d399;
+  --rf-radius: 14px;
+  --rf-space-1: 4px;
+  --rf-space-2: 8px;
+  --rf-space-3: 16px;
+  --rf-space-4: 24px;
+  --rf-focus: 0 0 0 3px rgba(139, 92, 246, 0.45);
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

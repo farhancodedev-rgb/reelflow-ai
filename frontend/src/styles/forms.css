@@ -1,0 +1,16 @@
+.rf-form { display: flex; flex-direction: column; gap: var(--rf-space-3); }
+.rf-field { display: flex; flex-direction: column; gap: 6px; font-size: 0.85rem; color: var(--rf-muted); }
+.rf-field textarea, .rf-field select, .rf-field input {
+  width: 100%; padding: 10px 12px; font: inherit; color: var(--rf-text);
+  background: var(--rf-bg); border: 1px solid var(--rf-border); border-radius: 10px;
+}
+.rf-field textarea { resize: vertical; }
+.rf-field textarea:focus-visible, .rf-field select:focus-visible, .rf-field input:focus-visible {
+  outline: none; box-shadow: var(--rf-focus);
+}
+.rf-field-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: var(--rf-space-3); }
+.rf-actions { display: flex; flex-wrap: wrap; gap: var(--rf-space-2); }
+.rf-meta { display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--rf-muted); margin-top: -8px; }
+.rf-note, .rf-error { display: flex; align-items: center; gap: 8px; font-size: 0.86rem; }
+.rf-note { padding: 10px 14px; color: var(--rf-muted); background: rgba(139,92,246,.08); border: 1px solid var(--rf-border); border-radius: 10px; }
+.rf-error { margin: 0; color: var(--rf-danger); }
