@@ -7,6 +7,7 @@ import captionsRouter from './routes/captions.js';
 import videoScriptRouter from './routes/videoScript.js';
 
 const app = express();
+app.disable('x-powered-by');
 
 const generationLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,
@@ -62,8 +63,6 @@ app.use((req, res) => {
 });
 
 app.use((error, req, res, next) => {
-  console.error('Unhandled API error:', error?.message || 'Unknown error');
-
   if (res.headersSent) {
     return next(error);
   }
@@ -91,6 +90,8 @@ app.use((error, req, res, next) => {
       message: 'This origin is not allowed.'
     });
   }
+
+  console.error('Unhandled API error:', error?.message || 'Unknown error');
 
   return res.status(500).json({
     success: false,
