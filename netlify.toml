@@ -1,0 +1,14 @@
+[build]
+  command = "npm --prefix backend ci && npm --prefix frontend ci && npm --prefix frontend run build"
+  publish = "frontend/dist"
+  functions = "backend/netlify/functions"
+
+[functions]
+  external_node_modules = ["express"]
+  node_bundler = "esbuild"
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/api/api/:splat"
+  status = 200
+  force = true
