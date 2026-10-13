@@ -42,8 +42,38 @@ export function loadSettings() {
   try {
     const raw = localStorage.getItem(SETTINGS_KEY)
     if (!raw) return { ...defaultSettings }
+
     const data = JSON.parse(raw)
-    return { ...defaultSettings, ...(data && typeof data === 'object' ? data : {}) }
+    if (!data || typeof data !== 'object' || Array.isArray(data)) {
+      return { ...defaultSettings }
+    }
+
+    const validRatios = ['9:16', '1:1', '16:9']
+    const validQualities = ['1080p', '720p']
+
+    return {
+      displayName: typeof data.displayName === 'string'
+        ? data.displayName.slice(0, 40)
+        : defaultSettings.displayName,
+      defaultRatio: validRatios.includes(data.defaultRatio)
+        ? data.defaultRatio
+        : defaultSettings.defaultRatio,
+      defaultQuality: validQualities.includes(data.defaultQuality)
+        ? data.defaultQuality
+        : defaultSettings.defaultQuality,
+      captionLanguage: ['en', 'ur'].includes(data.captionLanguage)
+        ? data.captionLanguage
+        : defaultSettings.captionLanguage,
+      reduceMotion: typeof data.reduceMotion === 'boolean'
+        ? data.reduceMotion
+        : defaultSettings.reduceMotion,
+      notifyExport: typeof data.notifyExport === 'boolean'
+        ? data.notifyExport
+        : defaultSettings.notifyExport,
+      notifyReminders: typeof data.notifyReminders === 'boolean'
+        ? data.notifyReminders
+        : defaultSettings.notifyReminders,
+    }
   } catch {
     return { ...defaultSettings }
   }
